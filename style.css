@@ -51,7 +51,7 @@ h1 {
 .menu {
   position: absolute;
   top: 20px;
-  right: 20px; /* زر القائمه صار في اليمين بدل اليسار */
+  left: 20px;
   z-index: 999;
 }
 
@@ -79,7 +79,7 @@ h1 {
   padding: 15px;
   position: absolute;
   top: 60px;
-  right: 0; /* قائمة الخيارات تطلع يمين */
+  left: 0;
   width: 250px;
 }
 
@@ -100,27 +100,45 @@ h1 {
   display: flex;
 }
 
-/* تصغير بسيط للهاتف */
+/* للموبايل (أقل من 600px) */
 @media (max-width: 600px) {
   .container {
     padding: 20px;
     max-width: 90%;
   }
+  h1 {
+    font-size: 20px;
+  }
+  .main-button {
+    font-size: 16px;
+    padding: 12px;
+  }
+  .menu button {
+    font-size: 18px;
+    padding: 6px 12px;
+  }
+  .menu-content a {
+    font-size: 18px;
+  }
+}
 
+/* للتابلت (بين 601px و 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .container {
+    padding: 25px;
+    max-width: 80%;
+  }
   h1 {
     font-size: 28px;
   }
-
   .main-button {
     font-size: 20px;
-    padding: 15px;
+    padding: 16px;
   }
-
   .menu button {
     font-size: 24px;
     padding: 8px 16px;
   }
-
   .menu-content a {
     font-size: 18px;
   }
