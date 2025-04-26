@@ -1,144 +1,42 @@
-/* تنسيقات أساسية */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Cairo', sans-serif;
-  background: linear-gradient(to right, #1c92d2, #f2fcfe);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- كلمات مفتاحية -->
+  <meta name="keywords" content="ملازم دراسية, ملازم العراق, ملازم الصفوف, ملازم المرحلة الإعدادية, ملازم المرحلة الثانوية, تحميل ملازم PDF">
 
-/* الحاوية الرئيسية */
-.container {
-  max-width: 600px;
-  width: 90%;
-  padding: 20px;
-  background-color: rgba(0, 0, 0, 0.3);
-  border: 3px solid #00bfff;
-  border-radius: 20px;
-  box-shadow: 0 0 25px rgba(0, 191, 255, 0.5);
-  text-align: center;
-}
+  <title>الملازم الدراسية</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { background: linear-gradient(to right, #1f1c2c, #928dab); }
+  </style>
+</head>
+<body>
+  <div class="menu">
+    <button onclick="toggleMenu()">≡ القائمة</button>
+    <div id="menuContent" class="menu-content">
+      <a href="index.html">الرئيسية</a>
+      <a href="malazem.html">الملازم الدراسية</a>
+      <a href="kutub.html">الكتب الدراسية</a>
+      <a href="thania.html">المرحلة الثانوية</a>
+      <a href="iadadia.html">المرحلة الإعدادية</a>
+    </div>
+  </div>
 
-/* العنوان */
-h1 {
-  margin-bottom: 20px;
-  font-size: 36px;
-  color: white;
-}
+  <div class="container">
+    <h1>اختر المرحلة الدراسية</h1>
+    <button class="main-button" onclick="location.href='thania.html'">المرحلة الثانوية</button>
+    <button class="main-button" onclick="location.href='iadadia.html'">المرحلة الإعدادية</button>
+  </div>
 
-/* الأزرار */
-.main-button {
-  width: 100%;
-  padding: 20px;
-  margin: 10px 0;
-  font-size: 24px;
-  background: linear-gradient(135deg, #1e90ff, #00bfff);
-  color: white;
-  border: none;
-  border-radius: 15px;
-  cursor: pointer;
-  transition: transform 0.2s, background 0.3s;
-}
-
-.main-button:hover {
-  background: linear-gradient(135deg, #00bfff, #1e90ff);
-  transform: scale(1.05);
-}
-
-/* القائمة */
-.menu {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 1000;
-}
-
-.menu button {
-  font-size: 28px;
-  padding: 10px 20px;
-  background-color: #00bfff;
-  border: none;
-  border-radius: 10px;
-  color: white;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.menu-content {
-  display: none;
-  flex-direction: column;
-  background-color: rgba(0, 0, 0, 0.9);
-  border: 2px solid #00bfff;
-  border-radius: 10px;
-  padding: 15px;
-  position: absolute;
-  top: 60px;
-  right: 0;
-  width: 250px;
-}
-
-.menu-content a {
-  color: white;
-  text-decoration: none;
-  font-size: 20px;
-  margin: 10px 0;
-}
-
-.menu-content a:hover {
-  color: #00bfff;
-}
-
-.show {
-  display: flex;
-}
-
-/* ====== Media Queries ====== */
-
-/* للموبايل (أقل من 600px) */
-@media (max-width: 600px) {
-  h1 {
-    font-size: 24px;
-  }
-  .main-button {
-    font-size: 18px;
-    padding: 15px;
-  }
-  .menu button {
-    font-size: 20px;
-    padding: 8px 16px;
-  }
-}
-
-/* للآيباد أو التابلت (من 600px إلى 992px) */
-@media (min-width: 601px) and (max-width: 992px) {
-  h1 {
-    font-size: 30px;
-  }
-  .main-button {
-    font-size: 22px;
-    padding: 18px;
-  }
-  .menu button {
-    font-size: 24px;
-    padding: 10px 18px;
-  }
-}
-
-/* للكمبيوتر (أكثر من 992px) */
-@media (min-width: 993px) {
-  h1 {
-    font-size: 36px;
-  }
-  .main-button {
-    font-size: 24px;
-    padding: 20px;
-  }
-  .menu button {
-    font-size: 28px;
-    padding: 10px 20px;
-  }
-}
+  <script>
+    function toggleMenu() {
+      var menu = document.getElementById("menuContent");
+      menu.classList.toggle("show");
+    }
+  </script>
+</body>
+</html>
