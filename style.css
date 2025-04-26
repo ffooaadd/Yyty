@@ -1,33 +1,34 @@
-
 body {
   margin: 0;
   padding: 0;
-  background: linear-gradient(to bottom, #000428, #004e92);
   font-family: 'Cairo', sans-serif;
-  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
   text-align: center;
+  color: white;
 }
 
 .container {
   max-width: 600px;
-  padding: 20px;
+  width: 90%;
+  padding: 30px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 3px solid #00bfff;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0, 191, 255, 0.5);
 }
 
 h1 {
   margin-bottom: 30px;
   font-size: 36px;
-  color: #ffffff;
 }
 
 .main-button {
-  width: 90%;
-  max-width: 400px;
+  width: 100%;
   padding: 20px;
-  margin: 15px auto;
+  margin: 15px 0;
   font-size: 24px;
   background: linear-gradient(135deg, #1e90ff, #00bfff);
   color: white;
@@ -45,4 +46,56 @@ h1 {
 
 .main-button:active {
   transform: scale(0.96);
+}
+
+.menu {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 999;
+}
+
+.menu button {
+  font-size: 28px;
+  padding: 10px 20px;
+  background-color: #00bfff;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.menu button:hover {
+  background-color: #1e90ff;
+}
+
+.menu-content {
+  display: none;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.9);
+  border: 2px solid #00bfff;
+  border-radius: 10px;
+  padding: 15px;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 250px;
+}
+
+.menu-content a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  margin: 10px 0;
+  display: block;
+  transition: color 0.3s;
+}
+
+.menu-content a:hover {
+  color: #00bfff;
+}
+
+.show {
+  display: flex;
 }
