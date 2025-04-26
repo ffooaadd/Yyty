@@ -1,24 +1,38 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>الملازم الدراسية - ملازمي الأفضل</title>
-  <meta name="description" content="ملازمي الأفضل | الملازم الدراسية للمراحل الثانوية والإعدادية في العراق.">
+  <title>الملازم الدراسية</title>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <style>
-    body {
-      background: linear-gradient(to bottom, #1f1c2c, #928dab);
-    }
+    body { background: linear-gradient(to right, #1f1c2c, #928dab); }
   </style>
 </head>
 <body>
+  <div class="menu">
+    <button onclick="toggleMenu()">≡ القائمة</button>
+    <div id="menuContent" class="menu-content">
+      <a href="index.html">الرئيسية</a>
+      <a href="malazem.html">الملازم الدراسية</a>
+      <a href="kutub.html">الكتب الدراسية</a>
+      <a href="thania.html">المرحلة الثانوية</a>
+      <a href="iadadia.html">المرحلة الإعدادية</a>
+    </div>
+  </div>
+
   <div class="container">
     <h1>اختر المرحلة الدراسية</h1>
     <button class="main-button" onclick="location.href='thania.html'">المرحلة الثانوية</button>
     <button class="main-button" onclick="location.href='iadadia.html'">المرحلة الإعدادية</button>
   </div>
+
+  <script>
+    function toggleMenu() {
+      var menu = document.getElementById("menuContent");
+      menu.classList.toggle("show");
+    }
+  </script>
 </body>
 </html>
