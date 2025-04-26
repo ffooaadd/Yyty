@@ -1,69 +1,145 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>الملازم الدراسية</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <style>
-    body { background: linear-gradient(to right, #1f1c2c, #928dab); }
-    .hidden { display: none; }
-  </style>
-</head>
-<body>
-
-<div class="menu">
-  <button onclick="toggleMenu()">≡ القائمة</button>
-  <div id="menuContent" class="menu-content">
-    <a href="index.html">الرئيسية</a>
-    <a href="malazem.html">الملازم الدراسية</a>
-    <a href="kutub.html">الكتب الدراسية</a>
-    <a href="thania.html">المرحلة الثانوية</a>
-    <a href="iadadia.html">المرحلة الإعدادية</a>
-  </div>
-</div>
-
-<div class="container">
-  <h1>اختر المرحلة الدراسية</h1>
-
-  <!-- أزرار المراحل -->
-  <button class="main-button" onclick="showSecondary()">المرحلة الثانوية</button>
-  <button class="main-button" onclick="showIntermediate()">المرحلة الإعدادية</button>
-
-  <!-- أزرار الصفوف الثانوية -->
-  <div id="secondary-classes" class="hidden">
-    <h1 style="margin-top:40px;">اختر الصف</h1>
-    <button class="main-button" onclick="location.href='https://t.me/XD6_bot?start=42c52dc18a23038232d9b96887ecf48d'">الرابع علمي</button>
-    <button class="main-button" onclick="location.href='https://t.me/XD6_bot?start=3456a8c4bf98c554d0a42b2d1b822b4a'">الخامس علمي</button>
-    <button class="main-button" onclick="location.href='https://t.me/XD6_bot?start=a9ee88ef2f3bbb11b6c843dd2a06a67f'">السادس علمي</button>
-  </div>
-
-  <!-- أزرار الصفوف الإعدادية -->
-  <div id="intermediate-classes" class="hidden">
-    <h1 style="margin-top:40px;">اختر الصف</h1>
-    <button class="main-button" onclick="location.href='https://t.me/XD6_bot?start=03e2f772a2bb48e86d452b7e3d783fba'">الأول متوسط</button>
-    <button class="main-button" onclick="location.href='https://t.me/XD6_bot?start=ee39a5632b8cf5f9ef090154c0d4e31b'">الثاني متوسط</button>
-    <button class="main-button" onclick="location.href='https://t.me/XD6_bot?start=33023f340b41f45bc5aeebfd8460f8b8'">الثالث متوسط</button>
-  </div>
-</div>
-
-<script>
-function toggleMenu() {
-  var menu = document.getElementById("menuContent");
-  menu.classList.toggle("show");
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Cairo', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  color: white;
 }
 
-function showSecondary() {
-  document.getElementById('secondary-classes').classList.remove('hidden');
-  document.getElementById('intermediate-classes').classList.add('hidden');
+.container {
+  max-width: 600px;
+  width: 90%;
+  padding: 30px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 3px solid #00bfff;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0, 191, 255, 0.5);
 }
 
-function showIntermediate() {
-  document.getElementById('intermediate-classes').classList.remove('hidden');
-  document.getElementById('secondary-classes').classList.add('hidden');
+h1 {
+  margin-bottom: 30px;
+  font-size: 36px;
 }
-</script>
 
-</body>
-</html>
+.main-button {
+  width: 100%;
+  padding: 20px;
+  margin: 15px 0;
+  font-size: 24px;
+  background: linear-gradient(135deg, #1e90ff, #00bfff);
+  color: white;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 191, 255, 0.3);
+  transition: transform 0.2s, background 0.3s;
+}
+
+.main-button:hover {
+  background: linear-gradient(135deg, #00bfff, #1e90ff);
+  transform: scale(1.05);
+}
+
+.main-button:active {
+  transform: scale(0.96);
+}
+
+.menu {
+  position: absolute;
+  top: 20px;
+  right: 20px; /* صارت على اليمين */
+  z-index: 999;
+}
+
+.menu button {
+  font-size: 28px;
+  padding: 10px 20px;
+  background-color: #00bfff;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.menu button:hover {
+  background-color: #1e90ff;
+}
+
+.menu-content {
+  display: none;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.9);
+  border: 2px solid #00bfff;
+  border-radius: 10px;
+  padding: 15px;
+  position: absolute;
+  top: 60px;
+  right: 0; /* صارت على اليمين */
+  width: 250px;
+}
+
+.menu-content a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  margin: 10px 0;
+  display: block;
+  transition: color 0.3s;
+}
+
+.menu-content a:hover {
+  color: #00bfff;
+}
+
+.show {
+  display: flex;
+}
+
+/* للموبايل (أقل من 600px) */
+@media (max-width: 600px) {
+  .container {
+    padding: 15px;
+    max-width: 95%;
+  }
+  h1 {
+    font-size: 18px;
+  }
+  .main-button {
+    font-size: 14px;
+    padding: 10px;
+  }
+  .menu button {
+    font-size: 20px;
+    padding: 6px 12px;
+  }
+  .menu-content a {
+    font-size: 16px;
+  }
+}
+
+/* للتابلت (بين 601px و 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .container {
+    padding: 25px;
+    max-width: 80%;
+  }
+  h1 {
+    font-size: 28px;
+  }
+  .main-button {
+    font-size: 20px;
+    padding: 16px;
+  }
+  .menu button {
+    font-size: 24px;
+    padding: 8px 16px;
+  }
+  .menu-content a {
+    font-size: 18px;
+  }
+}
