@@ -1,139 +1,127 @@
-/* إعدادات الخط */
 body {
-  font-family: 'Cairo', sans-serif;
   margin: 0;
   padding: 0;
-  background: #f7f7f7;
+  font-family: 'Cairo', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
   text-align: center;
-  direction: rtl;
-}
-
-/* خلفية القائمة */
-.menu {
-  background-color: #4CAF50;
-  overflow: hidden;
-  position: relative;
-  text-align: right; /* لجعل الزر في اليمين */
-  padding: 10px;
-}
-
-/* زر القائمة */
-.menu button {
-  background-color: #4CAF50;
   color: white;
-  border: none;
-  padding: 12px 20px;
-  font-size: 22px;
-  cursor: pointer;
 }
 
-/* محتوى القائمة */
-.menu-content {
-  display: none;
-  background-color: #f9f9f9;
-  position: absolute;
-  top: 60px;
-  right: 10px;
-  width: 200px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  border-radius: 5px;
-  text-align: right;
-  z-index: 1;
-}
-
-/* روابط داخل القائمة */
-.menu-content a {
-  color: black;
-  padding: 10px 15px;
-  text-decoration: none;
-  display: block;
-  border-bottom: 1px solid #ddd;
-}
-
-/* تحريك القائمة */
-.show {
-  display: block;
-}
-
-/* الحاوية */
 .container {
-  margin-top: 100px;
-  padding: 20px;
+  max-width: 600px;
+  width: 90%;
+  padding: 30px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 3px solid #00bfff;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0, 191, 255, 0.5);
 }
 
-/* الأزرار الرئيسية */
+h1 {
+  margin-bottom: 30px;
+  font-size: 36px;
+}
+
 .main-button {
-  background-color: #2196F3;
-  border: none;
-  color: white;
-  padding: 15px 25px;
-  margin: 15px;
-  border-radius: 8px;
+  width: 100%;
+  padding: 20px;
+  margin: 15px 0;
   font-size: 24px;
+  background: linear-gradient(135deg, #1e90ff, #00bfff);
+  color: white;
+  border: none;
+  border-radius: 15px;
   cursor: pointer;
-  width: 80%;
-  max-width: 400px;
-  transition: background-color 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 191, 255, 0.3);
+  transition: transform 0.2s, background 0.3s;
 }
 
 .main-button:hover {
-  background-color: #0b7dda;
+  background: linear-gradient(135deg, #00bfff, #1e90ff);
+  transform: scale(1.05);
 }
 
-/* عنوان الصفحة */
-h1 {
-  color: #333;
-  margin-bottom: 40px;
-  font-size: 32px;
+.main-button:active {
+  transform: scale(0.96);
 }
 
-/* وسائل الاستجابة - Responsive */
+.menu {
+  position: absolute;
+  top: 20px;
+  right: 20px; /* زر القائمه صار في اليمين بدل اليسار */
+  z-index: 999;
+}
 
-/* الهواتف */
+.menu button {
+  font-size: 28px;
+  padding: 10px 20px;
+  background-color: #00bfff;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.menu button:hover {
+  background-color: #1e90ff;
+}
+
+.menu-content {
+  display: none;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.9);
+  border: 2px solid #00bfff;
+  border-radius: 10px;
+  padding: 15px;
+  position: absolute;
+  top: 60px;
+  right: 0; /* قائمة الخيارات تطلع يمين */
+  width: 250px;
+}
+
+.menu-content a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  margin: 10px 0;
+  display: block;
+  transition: color 0.3s;
+}
+
+.menu-content a:hover {
+  color: #00bfff;
+}
+
+.show {
+  display: flex;
+}
+
+/* تصغير بسيط للهاتف */
 @media (max-width: 600px) {
-  .main-button {
-    font-size: 18px;
-    padding: 12px 20px;
-    width: 90%;
-  }
-
-  h1 {
-    font-size: 24px;
-  }
-
-  .menu-content {
-    width: 160px;
-    right: 5px;
-  }
-
-  .menu button {
-    font-size: 20px;
-    padding: 10px 15px;
-  }
-}
-
-/* التابلت (الأيباد) */
-@media (min-width: 601px) and (max-width: 992px) {
-  .main-button {
-    font-size: 20px;
-    padding: 14px 22px;
-    width: 85%;
+  .container {
+    padding: 20px;
+    max-width: 90%;
   }
 
   h1 {
     font-size: 28px;
   }
-}
 
-/* الكمبيوتر */
-@media (min-width: 993px) {
   .main-button {
-    font-size: 24px;
-    padding: 15px 25px;
-    width: 80%;
+    font-size: 20px;
+    padding: 15px;
   }
 
-  h1 {
-    font-size: 32px;
+  .menu button {
+    font-size: 24px;
+    padding: 8px 16px;
+  }
+
+  .menu-content a {
+    font-size: 18px;
   }
 }
