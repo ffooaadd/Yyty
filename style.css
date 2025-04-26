@@ -1,0 +1,48 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #000428, #004e92);
+  font-family: 'Cairo', sans-serif;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.container {
+  max-width: 600px;
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 30px;
+  font-size: 36px;
+  color: #ffffff;
+}
+
+.main-button {
+  width: 90%;
+  max-width: 400px;
+  padding: 20px;
+  margin: 15px auto;
+  font-size: 24px;
+  background: linear-gradient(135deg, #1e90ff, #00bfff);
+  color: white;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 191, 255, 0.3);
+  transition: transform 0.2s, background 0.3s;
+}
+
+.main-button:hover {
+  background: linear-gradient(135deg, #00bfff, #1e90ff);
+  transform: scale(1.05);
+}
+
+.main-button:active {
+  transform: scale(0.96);
+}
