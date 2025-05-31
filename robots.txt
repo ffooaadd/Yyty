@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://yyty-dun.vercel.app/sitemap.xml
